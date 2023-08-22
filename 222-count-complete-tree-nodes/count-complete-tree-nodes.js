@@ -11,18 +11,10 @@
  * @return {number}
  */
 var countNodes = function(root) {
-    let queue = [root];
-    let count = 0;
+    if (!root) return 0;
 
-    while(queue[0]) {
-        const currNode = queue.shift();
-        count++;
+    let left = countNodes(root.left);
+    let right = countNodes(root.right);
 
-        if(currNode.left) queue.push(currNode.left);
-        if(currNode.right) queue.push(currNode.right);
-    }
-
-    console.log("count", count);
-    return count;
-    
+    return 1 + left + right
 };

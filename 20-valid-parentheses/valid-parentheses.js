@@ -3,34 +3,29 @@
  * @return {boolean}
  */
 var isValid = function(s) {
-  if(s.length <= 1) {
-    return false
-  } 
-  const openingBrackets = new Set(["(", "[", "{"]);
-  const correspondingClosingBracket = {
-    "(": ")",
-    "{": "}",
-    "[": "]"
-};
+    const stack = [];
+    const bracketPairs = {
+        '(': ')',
+        '[': ']',
+        '{': '}'
+    };
 
-  const closingBracketStack = [];
+    for (let i = 0; i < s.length; i++) {
+        const currChar = s[i];
 
-  for (let i = 0; i < s.length; i++) {
-    const currBracket = s[i];
-    console.log("currBracket", currBracket)
-    if(openingBrackets.has(currBracket)) {
-      const closingBracket = correspondingClosingBracket[currBracket];
-      console.log("closingBracket", closingBracket)
-      closingBracketStack.unshift(closingBracket)
-      console.log("closingBracketStack", closingBracketStack)
-    } else {
-      if (currBracket !== closingBracketStack[0]) {
-        console.log("closingBracketStack", closingBracketStack)
-        return false;
-      } else {
-        closingBracketStack.shift();
-      }
+        if (currChar in bracketPairs) {
+            stack.push(currChar);
+        } else {
+            if (stack.length === 0) {
+                return false; // Unmatched closing bracket
+            }
+
+            const topBracket = stack.pop();
+            if (bracketPairs[topBracket] !== currChar) {
+                return false; // Mismatched opening and closing brackets
+            }
+        }
     }
-  }
-    return closingBracketStack.length === 0;
+
+    return stack.length === 0; // Check if all brackets were matched and closed
 };

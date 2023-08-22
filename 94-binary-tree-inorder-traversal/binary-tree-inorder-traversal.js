@@ -11,9 +11,10 @@
  * @return {number[]}
  */
 var inorderTraversal = function(root) {
-    if(!root) return [];
+    if (!root) return [];
 
-    let left = inorderTraversal(root.left)
-    let right = inorderTraversal(root.right)
+    let left = inorderTraversal(root.left);
+    let right = inorderTraversal(root.right);
+
     return left.concat([root.val]).concat(right)
 };

@@ -10,14 +10,12 @@ var minEatingSpeed = function(piles, h) {
 
     while (left <=right) {
         let k = Math.floor((right + left) / 2);
-        console.log("k", k)
         let totalHours = 0;
 
         for(let i = 0; i < piles.length; i++) {
             let hoursForPile = Math.ceil(piles[i] / k);
             totalHours += hoursForPile;
         }
-        console.log("totalHours", totalHours)
         if(totalHours <= h) {
             minK = Math.floor(k, minK);
             right = k - 1;

@@ -11,12 +11,10 @@ var carFleet = function(target, position, speed) {
         console.log(p, s)
         pairs.push([p, s])
     }
-    console.log("pairs", pairs)
 
     pairs.sort((a, b) => {
         return b[0] - a[0]
     })
-    console.log("pairs", pairs)
 
     const stack = []
     for(let i = 0; i < pairs.length; i++) {

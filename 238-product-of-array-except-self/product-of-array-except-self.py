@@ -11,13 +11,10 @@ class Solution:
             reversedProducts.append(num * reversedProducts[-1])
 
         reversedProducts.reverse()
-        print(products)
-        print(reversedProducts)
 
         res = []
         for i in range(0, len(nums)):
             num1 = products[i - 1] if i > 0 else 1
             num2 = reversedProducts[i + 1] if i < len(nums) - 1 else 1
             res.append(num1 * num2)
-        print(res)
         return res

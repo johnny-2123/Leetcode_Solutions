@@ -11,12 +11,9 @@ class Solution:
         numCountPairs = [[count, num] for num, count in numCountSet.items()]
 
         sortedNumCountPairs = sorted(numCountPairs, key=lambda x:x[0])
-        print(sortedNumCountPairs)
 
         mostKPairs = sortedNumCountPairs[-k:]
-        print(mostKPairs)
 
         result = [num for count, num in mostKPairs]
-        print(result)
 
         return result

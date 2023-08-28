@@ -5,7 +5,6 @@
  */
 var topKFrequent = function(nums, k) {
     nums.sort();
-    console.log('sortedNums', nums);
 
     const trackedNums = {}
 
@@ -21,18 +20,11 @@ var topKFrequent = function(nums, k) {
             trackedNums[numCount].push(prevNum)
             numCount = 1;
         }
-
-        // if (!currNum) {
-        //     trackedNums[numCount] = trackedNums[numCount] || [];
-        //     trackedNums[numCount].push(prevNum)
-        // }
     } 
 
-    console.log('trackedNums', trackedNums)
 
     
     let mostFrequentKeys = Object.keys(trackedNums).sort((a, b) => a -b).slice(-k)
-    console.log('mostFrequentKeys', mostFrequentKeys)
 
     const mostFrequentNums = [];
 
@@ -40,8 +32,6 @@ var topKFrequent = function(nums, k) {
         const key = mostFrequentKeys[i]
         mostFrequentNums.push(...trackedNums[key])
     }
-
-    console.log(`mostFrequentNums`, mostFrequentNums)
 
     return mostFrequentNums.slice(-k)
 

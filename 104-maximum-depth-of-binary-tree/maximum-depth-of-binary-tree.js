@@ -12,7 +12,6 @@
  */
 var maxDepth = function(root) {
     let queue = [root];
-    let output = [];
     let count = 0;
 
     while(queue[0]) {
@@ -28,7 +27,6 @@ var maxDepth = function(root) {
         }
 
         if(row) {
-            output.push(row);
             count++;
         }
     }

@@ -16,7 +16,6 @@ class Solution:
             pointArray.append(distance)
         
         heapq.heapify(pointArray)
-        print("pointMap", pointMap)
         res = []
         
         i = 0
@@ -26,5 +25,4 @@ class Solution:
             for coordinate in subArr:
                 res.append(coordinate)
                 i += 1
-        print("res", res)
         return res

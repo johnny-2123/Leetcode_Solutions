@@ -13,7 +13,5 @@ class Solution:
                 arr.append(num1 + num2)
                 j += 1
             res.append(arr)
-
-        print("res", res)
         return res
             

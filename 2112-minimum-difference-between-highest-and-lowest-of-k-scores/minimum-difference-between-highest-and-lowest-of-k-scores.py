@@ -10,12 +10,9 @@ class Solution:
         minDiff = float('inf')
 
         while right < len(nums):
-            print("left", left)
-            print("right", right)
             rightNum = nums[right]
             leftNum = nums[left]
             diff = rightNum - leftNum
-            print("diff", diff)
             minDiff = min(minDiff, diff)
             left += 1
             right += 1

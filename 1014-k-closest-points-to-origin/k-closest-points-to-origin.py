@@ -8,7 +8,6 @@ class Solution:
             x = point[0]
             y = point[1]
             distance = math.sqrt((0 - x)**2 + (0 - y)**2)
-            # pointMap[distance] = point
             if distance in pointMap:
                 pointMap[distance].append(point)
             else:

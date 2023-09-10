@@ -13,7 +13,6 @@ class Solution:
                 newArr.append([cur.val, cur])
                 cur = cur.next
         newArr.sort(key = lambda x: x[0])
-        print(newArr)
         dummy = ListNode()
         cur = dummy
         for val, node in newArr:

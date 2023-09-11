@@ -4,7 +4,6 @@ class Solution:
         right = len(arr) - 1
 
         def _leftIsCloser():
-            nonlocal x
             a = arr[left]
             b = arr[right]
             return (abs(a - x) < abs(b - x)) or ((abs(a - x) == abs(b - x)) and a < b)

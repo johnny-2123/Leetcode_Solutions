@@ -10,7 +10,6 @@ class Solution:
                 seenFruits[rightFruit] += 1
             else:
                 seenFruits[rightFruit] = 1
-            print('len', len(seenFruits))
             while len(seenFruits) > 2:
                 leftFruit = fruits[left]
                 seenFruits[leftFruit] -= 1
@@ -20,7 +19,6 @@ class Solution:
             
             windowLen = right - left + 1
             maxFruits = max(maxFruits, windowLen)
-            print("set", seenFruits)
             right += 1
         return maxFruits
         

@@ -5,7 +5,7 @@ class Solution:
         curLen = 1
 
         for num in nums:
-            if num - 1 in numSet:
+            if (num - 1) in numSet:
                 continue
             
             nextNum = num + 1

@@ -1,19 +1,16 @@
+from collections import Counter
+
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        numCountSet = {}
-        for n in nums:
-            if (n in numCountSet):
-                numCountSet[n] += 1
-            else:
-                numCountSet[n] = 1
-        
-
-        numCountPairs = [[count, num] for num, count in numCountSet.items()]
-
-        sortedNumCountPairs = sorted(numCountPairs, key=lambda x:x[0])
-
-        mostKPairs = sortedNumCountPairs[-k:]
-
-        result = [num for count, num in mostKPairs]
-
+        numCount = Counter(nums)
+        print("numCount", numCount)
+        countNumPairs = [(count, num) for num, count in numCount.items()]
+        countNumPairs.sort(reverse=True)
+        print("countNumPairs", countNumPairs)
+        result = []
+        i = 0
+        while i < k:
+            num = countNumPairs[i][1]
+            result.append(num)
+            i += 1
         return result

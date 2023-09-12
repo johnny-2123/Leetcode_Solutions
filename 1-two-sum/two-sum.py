@@ -1,15 +1,11 @@
-class Solution(object):
-    def twoSum(self, nums, target):
-        numsSet = {}
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        numMap = {}
 
-        for i, num in enumerate(nums):
-            numsSet[num] = i
-            
         for i, num in enumerate(nums):
             complement = target - num
-            if (complement in numsSet):
-                complementIdx = numsSet[complement]
-                if (complementIdx != i):
-                    return [i, complementIdx]
-
-        return None
+            if complement in numMap:
+                return [numMap[complement], i]
+            
+            numMap[num] = i
+        

@@ -13,7 +13,6 @@ class Solution:
             if maxChanges <= k:
                 longestStr = max(longestStr, windowLen)
                 right += 1
-                print("right", right)
                 if right < len(s):
                     charCounter[s[right]] = charCounter.get(s[right], 0) + 1
             else:

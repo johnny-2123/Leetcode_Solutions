@@ -31,9 +31,7 @@ class Solution:
             _dfs(row, col - 1)
             
             if grid[row][col] == 1:
-                print(f"pos: {row}, {col}")
                 currArea += 1
-                print(f"currArea: {currArea}")
 
         visited = set()
 

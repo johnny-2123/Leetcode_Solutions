@@ -3,7 +3,7 @@ class Solution:
         rows, cols = len(grid1), len(grid1[0])
         visited = set()
 
-        def dfs(r, c, grid, island: Set) -> None:
+        def dfs(r, c, grid, island):
             if (r < 0 or r >= rows) or (c < 0 or c >= cols):
                 return
             if grid[r][c] == 0 or (r, c) in visited:
@@ -14,6 +14,7 @@ class Solution:
             dfs(r - 1, c, grid, island)
             dfs(r, c + 1, grid, island)
             dfs(r, c - 1, grid, island)
+            return 
 
         count = 0
         for r in range(rows):

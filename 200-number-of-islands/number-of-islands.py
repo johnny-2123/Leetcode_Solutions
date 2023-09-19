@@ -12,7 +12,6 @@ class Solution:
                 return False
             
             visited.add(pos)
-            print("pos", pos)
 
             _dfs(row + 1, col)
             _dfs(row - 1, col)

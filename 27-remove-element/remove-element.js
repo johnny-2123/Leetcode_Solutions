@@ -11,6 +11,5 @@ var removeElement = function(nums, val) {
             count++
         }
     }
-    console.log("nums", nums.slice(0, count));
     return count;
 };

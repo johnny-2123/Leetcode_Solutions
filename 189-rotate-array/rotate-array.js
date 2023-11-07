@@ -10,5 +10,5 @@ var rotate = function(nums, k) {
 
     const arr1 = nums.slice(-breakpoint);
     const arr2 = nums.slice(0, length - breakpoint);
-    nums.splice(0, length, ...arr1, ...arr2);
+    nums.splice(0, length, ...nums.slice(-breakpoint), ...nums.slice(0, length - breakpoint));
 };

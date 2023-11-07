@@ -10,8 +10,6 @@ class Solution:
 
         arr1 = nums[length - breakpoint:]
         arr2 = nums[:length - breakpoint]
-        print("arr1", arr1)
-        print("arr2", arr2)
         nums[0:0+len(arr1)] = arr1
         nums[breakpoint: breakpoint + (len(arr2))] = arr2
 

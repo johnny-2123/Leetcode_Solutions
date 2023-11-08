@@ -1,19 +1,16 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        maxProfit = 0
         left = 0
-        right = 1
+        maxProfit = 0
 
-        while right < len(prices):
-            rightPrice = prices[right]
+        for right, num in enumerate(prices):
             leftPrice = prices[left]
+            rightPrice = prices[right]
 
-            profit = rightPrice - leftPrice
-            maxProfit = max(maxProfit, profit)
+            currProfit = rightPrice - leftPrice
+            maxProfit = max(currProfit, maxProfit)
 
-            if rightPrice < leftPrice:
+            if leftPrice > rightPrice:
                 left = right
-                right += 1
-            else:
-                right += 1
+
         return maxProfit

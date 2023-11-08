@@ -3,9 +3,8 @@ class Solution:
         left = 0
         maxProfit = 0
 
-        for right, num in enumerate(prices):
+        for right, rightPrice in enumerate(prices):
             leftPrice = prices[left]
-            rightPrice = prices[right]
 
             currProfit = rightPrice - leftPrice
             maxProfit = max(currProfit, maxProfit)

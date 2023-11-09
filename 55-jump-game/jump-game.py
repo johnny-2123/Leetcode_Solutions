@@ -3,8 +3,6 @@ class Solution:
         maxIdx = 0
 
         for i in range(0, len(nums)):
-            print("i", i)
-            print("maxIdx", maxIdx)
             if i > maxIdx:
                 return False
             

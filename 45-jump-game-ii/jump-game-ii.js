@@ -7,7 +7,6 @@ var jump = function(nums) {
     let right = 0;
     let steps = 0;
     while (right < nums.length - 1) {
-        // keep track how far you can get from this window
         let maxIdx = right;
         for (let i = 0; i < right + 1; i++) {
             maxIdx = Math.max(maxIdx, i + nums[i]);

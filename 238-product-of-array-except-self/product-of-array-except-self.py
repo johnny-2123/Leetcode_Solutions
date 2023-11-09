@@ -5,14 +5,12 @@ class Solution:
         for i, num in enumerate(nums):
             product  *= num
             behindProducts[i] = product
-        print("behindProducts", behindProducts)
 
         product = 1
         aheadProducts = len(nums) * [0]
         for i in range(len(nums) - 1, - 1, -1):
             product *= nums[i]
             aheadProducts[i] = product
-        print("aheadProducts", aheadProducts)
 
         res = len(nums) * [0]
         for i in range(0, len(nums)):

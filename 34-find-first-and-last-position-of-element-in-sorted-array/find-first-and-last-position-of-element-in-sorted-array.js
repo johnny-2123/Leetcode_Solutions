@@ -21,7 +21,7 @@ var searchRange = function(nums, target) {
     }
 
     let last = -1
-    start = 0
+    start = first
     end = nums.length - 1
     while (start <= end) {
         const mid = Math.floor((start + end) /2);

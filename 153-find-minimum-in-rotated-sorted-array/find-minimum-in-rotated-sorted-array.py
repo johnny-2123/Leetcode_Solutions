@@ -10,9 +10,12 @@ class Solution:
             leftNum = nums[left]
             rightNum = nums[right]
 
+
+
+
             if leftNum <= rightNum:
                 return leftNum
-                
+               
             if leftNum <= midNum:
                 left = mid + 1
             else:

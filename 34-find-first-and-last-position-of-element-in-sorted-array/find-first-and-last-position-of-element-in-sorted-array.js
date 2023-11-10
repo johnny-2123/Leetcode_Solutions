@@ -4,15 +4,15 @@
  * @return {number[]}
  */
 var searchRange = function(nums, target) {
-    let targetIdx = -1;
+    let first = -1;
     let start = 0;
     let end = nums.length - 1;
 
     while (start <= end) {
         const mid = Math.floor((start + end) / 2);
         if (nums[mid] === target) {
-            targetIdx = mid;
-            break;
+            first = mid;
+            end = mid - 1;
         } else if (target < nums[mid]) {
             end = mid - 1
         } else {
@@ -20,16 +20,20 @@ var searchRange = function(nums, target) {
         } 
     }
 
-    if (targetIdx === -1) return [-1, -1];
-
-    start = targetIdx;
-    while (start >= 0 && nums[start] === target) {
-        start--;
+    let last = -1
+    start = 0
+    end = nums.length - 1
+    while (start <= end) {
+        const mid = Math.floor((start + end) /2);
+        if (nums[mid] === target){
+            last = mid
+            start = mid + 1;
+        } else if (target < nums[mid]) {
+            end = mid - 1;
+        } else {
+            start = mid + 1;
+        }
     }
-    end = targetIdx;
-    while (end <= nums.length - 1 && nums[end] === target) {
-        end++;
-    }
 
-    return [start + 1, end - 1];
+    return [first, last]
 };

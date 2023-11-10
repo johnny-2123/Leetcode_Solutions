@@ -7,7 +7,6 @@ class Solution:
 
         while start <= end:
             mid = math.floor((start + end) /2)
-            print("mid", mid)
             if (nums[mid] == target):
                 targetIdx = mid
                 break

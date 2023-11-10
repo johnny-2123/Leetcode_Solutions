@@ -18,9 +18,6 @@ var romanToInt = function(s) {
 
     for (let i = 0; i < s.length; i ++) {
         currValue = values[s[i]];
-        console.log("i", i)
-        console.log("currValue", currValue);
-        console.log("prevValue", prevValue)
         if (currValue > prevValue) {
             sum -= prevValue;
             sum += (currValue - prevValue);

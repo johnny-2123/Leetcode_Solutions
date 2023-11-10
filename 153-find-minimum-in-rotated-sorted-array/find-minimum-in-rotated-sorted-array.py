@@ -3,20 +3,15 @@ class Solution:
         left = 0
         right = len(nums) - 1
 
-
         while left < right:
-            mid = (left + right) // 2
-            midNum = nums[mid]
+            mid = math.floor((left + right) / 2)
             leftNum = nums[left]
             rightNum = nums[right]
-
-
-
+            midNum = nums[mid]
 
             if leftNum <= rightNum:
                 return leftNum
-               
-            if leftNum <= midNum:
+            elif leftNum <= midNum:
                 left = mid + 1
             else:
                 right = mid

@@ -23,7 +23,6 @@ var searchRange = function(nums, target) {
     if (targetIdx === -1) return [-1, -1];
 
     start = targetIdx;
-    let first = start
     while (start >= 0 && nums[start] === target) {
         start--;
     }

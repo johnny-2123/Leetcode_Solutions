@@ -3,25 +3,20 @@
  * @return {number}
  */
 var maxArea = function(height) {
-    let maxArea = -Infinity;
-    let left = 0; 
-    let right = height.length - 1;
+    let maxVolume = 0;
+    let [left, right] = [0, height.length - 1];
 
     while (left < right) {
         const leftHeight = height[left];
         const rightHeight = height[right];
+        const currVolume = (right - left) * Math.min(leftHeight, rightHeight);
+        maxVolume = Math.max(maxVolume, currVolume);
 
-        const currArea = Math.min(leftHeight, rightHeight) * (right - left);
-
-        maxArea = Math.max(currArea, maxArea);
-
-        if(leftHeight < rightHeight) {
+        if (leftHeight < rightHeight){
             left++;
         } else {
             right--;
         }
     }
-
-    return maxArea
-
+    return maxVolume
 };

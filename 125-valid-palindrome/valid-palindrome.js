@@ -4,23 +4,17 @@
  */
 var isPalindrome = function(s) {
     const trimmedString = s.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
-    let [leftIdx, rightIdx] = [0, trimmedString.length - 1];
-
-
-    while (leftIdx < trimmedString.length - 1) {
-        const leftChar = trimmedString[leftIdx];
-        const rightChar = trimmedString[rightIdx];
-
-
-        if(leftChar !== rightChar){
+    let [left, right] = [0, trimmedString.length - 1];
+    console.log("trimmedstr", trimmedString)
+    while (left < trimmedString.length - 1) {
+        if (trimmedString[left] !== trimmedString[right]){
+            console.log("s[left]", trimmedString[left])
+            console.log("s[right]", trimmedString[right])            
             return false
         }
-
-
-        leftIdx += 1;
-        rightIdx -= 1;
+        left++;
+        right--;
     }
-
 
     return true
 };

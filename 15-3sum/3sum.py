@@ -3,19 +3,23 @@ class Solution:
     nums.sort()
     res = []
 
+
     for i in range(0, (len(nums) - 2)):
       num1 = nums[i]
       if i > 0 and num1 == nums[i - 1]:
         continue
 
+
       subseen = set()
       left = i + 1
       right = len(nums) - 1
+
 
       while left < right:
         num2 = nums[left]
         num3 = nums[right]
         total = num1 + num2 + num3
+
 
         if total == 0 and (not num2 in subseen) and (not num3 in subseen):
           res.append([num1, num2, num3])
@@ -26,4 +30,8 @@ class Solution:
         else:
           right -= 1
 
+
     return res
+
+
+

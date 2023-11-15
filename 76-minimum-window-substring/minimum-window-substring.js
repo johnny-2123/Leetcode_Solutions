@@ -38,7 +38,7 @@ var minWindow = function(s, t) {
           have += 1;
       }
 
-      while (have == need) {
+      while (have >= need) {
           if ((right - left + 1) < resLength) {
               res = [left, right];
               resLength = (right - left + 1)

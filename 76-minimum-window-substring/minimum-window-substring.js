@@ -21,7 +21,7 @@ var minWindow = function(s, t) {
   let have = 0;
   const need = Object.keys(countT).length; 
 
-  let res = [-1, -1];
+  let res = "";
   let resLength = Infinity; 
 
   let left = 0;
@@ -40,7 +40,7 @@ var minWindow = function(s, t) {
 
       while (have >= need) {
           if ((right - left + 1) < resLength) {
-              res = [left, right];
+              res = s.slice(left, right + 1);
               resLength = (right - left + 1)
           }
 
@@ -55,12 +55,6 @@ var minWindow = function(s, t) {
       } 
   }
   
-  if (resLength !== Infinity) {
-      const [left, right] = res;
-      return s.slice(left, right + 1);
-    } else {
-          return ""
-    }
-
+    return res
 
 };

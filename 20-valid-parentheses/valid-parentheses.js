@@ -3,30 +3,24 @@
  * @return {boolean}
  */
 var isValid = function(s) {
-  if(s.length <= 1) {
-    return false
-  } 
-  const openingBrackets = new Set(["(", "[", "{"]);
-  const correspondingClosingBracket = {
-    "(": ")",
-    "{": "}",
-    "[": "]"
-};
+    const matchingCloseParentheses = {
+        "{": "}",
+        "[": "]",
+        "(": ")"
+    };
 
-  const closingBracketStack = [];
+    const stack = [];
 
-  for (let i = 0; i < s.length; i++) {
-    const currBracket = s[i];
-    if(openingBrackets.has(currBracket)) {
-      const closingBracket = correspondingClosingBracket[currBracket];
-      closingBracketStack.unshift(closingBracket)
-    } else {
-      if (currBracket !== closingBracketStack[0]) {
-        return false;
-      } else {
-        closingBracketStack.shift();
-      }
+    for (const char of s) {
+        if (char in matchingCloseParentheses) {
+            stack.push(char)
+        } else {
+            if (!(stack.length > 0)) return false
+            const openP = stack.pop();
+            if (char !== matchingCloseParentheses[openP]) {
+                return false
+            }
+        }
     }
-  }
-    return closingBracketStack.length === 0;
+    return stack.length === 0
 };

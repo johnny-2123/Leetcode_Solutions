@@ -7,7 +7,7 @@ class Solution:
         for ele in splitPath:
             if ele and ele not in ("..", "."):
                 stack.append(ele)
-            if (ele == ".." and stack):
+            if ele == ".." and stack:
                 stack.pop()
 
         return f"/{'/'.join(stack)}"

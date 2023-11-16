@@ -5,7 +5,7 @@ class Solution:
         stack = []
 
         for ele in splitPath:
-            if ele and not(ele == "..") and not(ele == "."):
+            if ele and ele not in ("..", "."):
                 stack.append(ele)
             if (ele == ".." and stack):
                 stack.pop()

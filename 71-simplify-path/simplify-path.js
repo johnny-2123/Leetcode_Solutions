@@ -4,7 +4,6 @@
  */
 var simplifyPath = function(path) {
     const splitPath = path.split("/");
-    console.log("splitPath", splitPath);
 
     const simplifiedPath = []
     for (let el of splitPath) {

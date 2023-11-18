@@ -11,27 +11,7 @@
  * @return {number}
  */
 var maxDepth = function(root) {
-    let queue = [root];
-    let count = 0;
+    if (!root) return 0;
 
-    while(queue[0]) {
-        let qLength = queue.length;
-        let row = [];
-
-        for (let i = 0; i < qLength; i++) {
-            const currNode = queue.shift();
-            row.push(currNode);
-
-            if(currNode.left) queue.push(currNode.left)
-            if(currNode.right) queue.push(currNode.right)
-        }
-
-        if(row) {
-            count++;
-        }
-    }
-
-    console.log("count", count)
-    return count
-    
+    return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
 };

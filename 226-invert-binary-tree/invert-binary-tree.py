@@ -8,9 +8,7 @@ class Solution:
     def traverse(self, root):
         if not root: return
 
-        tempLeft = root.left
-        root.left = root.right
-        root.right = tempLeft
+        root.left, root.right = root.right, root.left
         self.traverse(root.left)
         self.traverse(root.right)
 

@@ -19,9 +19,8 @@ class Solution:
                 curr = queue.popleft()
                 row.append(curr.val)
 
-                if curr.left: queue.append(curr.left)
-                if curr.right: queue.append(curr.right)
-            
+                if (curr.left): queue.append(curr.left)
+                if (curr.right): queue.append(curr.right)
+
             res.append(row)
-        
         return res

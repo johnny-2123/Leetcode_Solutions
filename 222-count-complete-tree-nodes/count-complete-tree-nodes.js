@@ -10,11 +10,12 @@
  * @param {TreeNode} root
  * @return {number}
  */
+
 var countNodes = function(root) {
     if (!root) return 0;
 
-    let left = countNodes(root.left);
-    let right = countNodes(root.right);
+    const left = countNodes(root.left);
+    const right = countNodes(root.right);
 
-    return 1 + left + right
+    return 1 + left + right;
 };

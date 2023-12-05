@@ -6,17 +6,9 @@
 #         self.right = right
 class Solution:
     def countNodes(self, root: Optional[TreeNode]) -> int:
-        queue = []
-        queue.append(root)
+        if not root: return 0
 
-        count =  0
-        while len(queue) > 0:
-            qLength = len(queue)
-            for i in range(qLength):
-                node = queue.pop(0)
-                if node: count += 1
-                if node and node.left:
-                    queue.append(node.left)
-                if node and node.right:
-                    queue.append(node.right)
-        return count 
+        left = self.countNodes(root.left)
+        right = self.countNodes(root.right)
+
+        return 1 + left + right

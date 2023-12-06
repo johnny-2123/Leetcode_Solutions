@@ -25,8 +25,5 @@ var getMinimumDifference = function(root) {
 const _dfs = (node) => {
     if (!node) return [];
 
-    const left = _dfs(node.left);
-    const right = _dfs(node.right);
-
-    return left.concat([node.val]).concat(right)
+    return _dfs(node.left).concat([node.val]).concat(_dfs(node.right));
 }

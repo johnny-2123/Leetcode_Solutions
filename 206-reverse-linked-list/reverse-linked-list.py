@@ -11,9 +11,5 @@ class Solution:
         prev = None
 
         while curr:
-            nextNode = curr.next
-            curr.next = prev
-
-            prev = curr
-            curr = nextNode
+            curr.next, prev, curr = prev, curr, curr.next
         return prev

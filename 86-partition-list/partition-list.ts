@@ -43,12 +43,6 @@ function partition(head: ListNode | null, x: number): ListNode | null {
         rightTail = node;
     }
 
-    console.log('leftHead', leftHead);
-    console.log('leftTail', leftTail);
-
-    console.log('rightHead', rightHead);
-    console.log('rightTail', rightTail);
-
     if (!leftHead.next) {
         leftHead.next = rightHead.next
     } else {

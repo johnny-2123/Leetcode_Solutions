@@ -5,7 +5,6 @@ function strStr(haystack: string, needle: string): number {
     let right = needle.length;
 
     while (right <= haystack.length) {
-        console.log(haystack.slice(left, right))
         if (haystack.slice(left, right) === needle) {
             return left
         } else {

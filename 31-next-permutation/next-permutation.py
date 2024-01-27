@@ -10,7 +10,8 @@ class Solution:
                 break
         
         if pivotIdx == -1:
-            return nums.sort()
+            nums.sort()
+            return
 
         for i in range(len(nums) - 1, -1, -1):
             if nums[i] > nums[pivotIdx]:
@@ -18,4 +19,4 @@ class Solution:
                 break
         
         nums[pivotIdx + 1:] =  reversed(nums[pivotIdx + 1:])
-        return nums
+        return

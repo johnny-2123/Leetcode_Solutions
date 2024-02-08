@@ -6,9 +6,11 @@ class Solution:
             "[": "]"
         }
 
+
         stack = []
 
-        for char in s: 
+
+        for char in s:
             if char in matchingCloseParentheses:
                 stack.append(char)
             else:
@@ -16,5 +18,6 @@ class Solution:
                 openP = stack.pop()
                 if char != matchingCloseParentheses[openP]:
                     return False
+
 
         return len(stack) == 0

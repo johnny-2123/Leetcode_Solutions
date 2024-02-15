@@ -6,7 +6,7 @@ class Solution:
         tChars = {}
         for char in t:
             tChars[char] = tChars.get(char, 0) + 1
-        
+       
         need = len(tChars.keys())
         have = 0
 
@@ -20,7 +20,7 @@ class Solution:
 
             while have >= need:
                 minLength = min(minLength, end - start + 1)
-                if minLength == (end - start + 1): 
+                if minLength == (end - start + 1):
                     res = s[start: end + 1]
 
                 startChar = s[start]
@@ -28,7 +28,7 @@ class Solution:
 
                 if startChar in tChars and window[startChar] < tChars[startChar]:
                     have -= 1
-                    
+                   
                 start += 1
-        
+       
         return res

@@ -12,18 +12,18 @@ class Solution:
         while curr:
             curr = curr.next
             count += 1
-        
+       
         target = count - n
 
         count = 1
         curr = dummy
-        while curr and count < target: 
+        while curr and count < target:
             curr = curr.next
             count += 1
-        
+       
         if curr.next:
             curr.next = curr.next.next
         else:
             curr.next = null
-        
+       
         return dummy.next
